@@ -1,0 +1,63 @@
+Práctica Curso JS
+ 
+Crear una función que reciba como parametro merchant_id y en caso de no enviarlo debera regresar un arreglo de objetos
+de todos los Comerciantes.
+
+La función debe buscar las ordenes "COMPLETADAS" y 
+    - calcular el monto total de ventas completadas, 
+    - número total de ventas completadas, 
+    - número de ventas faltante de completar.
+    - calcular comision total que se le cobrará al merchant de acuerdo a la siguiente tabla:
+
+        Tarifas de comisión por pedido:
+            1% de comisión para importes inferiores a 25000
+            0,95% para importes entre 25000 - 60000
+            0,85% para importes superiores a 60000
+
+    - agregar una propiedad a la respuesta que contenga el total a desembolsar al merchant (total de ventas - comision calculada)
+
+    Ejemplo de Response:
+        respuestaConId = {
+            id: 1,
+            merchant_id: 1,
+            numero_ventas: 100,
+            faltan_completar: 50,
+            total_ventas: 26000,
+            comision: 6000,
+            desembolso: 20000
+        }
+
+        respuestaSinId = [{
+            id: 1,
+            merchant_id: 1,
+            numero_ventas: 100,
+            faltan_completar: 50,
+            total_ventas: 26000,
+            comision: 6000,
+            desembolso: 20000
+        },{
+            id: 2,
+            merchant_id: 1,
+            numero_ventas: 100,
+            faltan_completar: 50,
+            total_ventas: 26000,
+            comision: 6000,
+            desembolso: 20000
+        }]
+
+Extra:
+    Concatenar con la respuesta de la función el nombre del merchant_id
+    Concatenar a la respuesta el id del shopper (cliente) que ha realizado la mayor cantidad de compras.
+
+    respuesta = {
+            id: 1,
+            merchant_id: 1,
+            merchant: "Nombre del comerciante",
+            numero_ventas: 100,
+            faltan_completar: 50,
+            total_ventas: 26000,
+            comision: 6000,
+            desembolso: 20000,
+            mejor_comprador: 255
+        }
+
